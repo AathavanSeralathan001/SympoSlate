@@ -1,0 +1,27 @@
+@font-face {
+    font-family: header;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf');
+}
+
+.header{
+    color:#461143;
+    font-family: header;
+    font-weight: bolder;
+}
+
+.logo-mobile{
+    display: none;
+}
+
+
+@media screen  and (max-width:765px){
+    .logo{
+        display: none;
+    }
+    .logo-mobile{
+        display: block;
+    }
+    .login-img{
+        width: 250px;
+    }
+}

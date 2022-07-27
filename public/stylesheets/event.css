@@ -1,0 +1,72 @@
+
+@font-face {
+    font-family:sans-bold;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf');
+}
+@font-face {
+    font-family: Regular;
+    src: url("../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf");
+}
+@font-face {
+    font-family: semi;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf');
+}
+.button{
+    font-family: Regular !important;
+}
+ .all-event{
+    background-color:#ECECEC;
+    padding:5px 10px;
+}
+.all-event-button,.all-event-button:hover{
+    color:#461143;
+    font-family:sans-bold;
+    font-weight: Bold;
+    font-size:20px;
+    letter-spacing: 1px;
+    margin-left: 50px;
+} 
+
+.event-img{
+    height:120px;
+    width:100%;
+}
+
+.box{
+    background-color:#ECECEC;
+    margin: 40px;
+    padding:30px;
+}
+
+.event-time{
+    font-family: Regular;
+    font-size:15px;
+}
+
+
+.event-name{
+    font-family: semi;
+    font-weight:600;
+    font-size: 15px;
+    color:#461143;
+    margin: 3px;
+    text-decoration: none;
+}
+
+
+.upcoming{
+    color:#461143;
+    font-family: sans-bold;
+    font-weight:600;
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity:1;
+}
+
+
+
+
+
+
+
+

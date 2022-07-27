@@ -1,0 +1,36 @@
+@font-face {
+    font-family: bold;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: regular;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf');
+}
+
+.all-event{
+    background-color:#FFF;
+    padding:5px 10px;
+}
+
+.all-event-button,.all-event-button:hover{
+    margin: 5px 0;
+    color:#461143;
+    font-family:sans-bold;
+    font-weight: Bold;
+    font-size:20px;
+    letter-spacing: 1px;
+    
+    text-decoration: none;
+    margin-left: 50px;
+} 
+.calendar-button,.calendar-button:hover{
+    margin:5px 0;
+    color:#461143;
+    font-family:sans-bold;
+    font-weight: Bold;
+    font-size:20px;
+    letter-spacing: 1px;
+
+    margin-left: 50px;
+} 

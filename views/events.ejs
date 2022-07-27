@@ -1,0 +1,62 @@
+<% layout('layout/boilerplate')%>
+<%- include('./partials/navbar')%>
+<link rel="stylesheet" href="/stylesheets/button.css">
+<link rel="stylesheet" href="/stylesheets/event.css">
+
+<div class="all-event">
+    <a class="all-event-button" href="/events" >All Events</a>
+   
+</div>
+<div class="container-fluid">
+<div class="box">
+    <div class="row">
+        <div class="d-flex justify-content-between">
+            <p class="upcoming">Upcoming Events</p>
+            <form action="/events/new">
+                <button class="button px-3">Add event</button>
+            </form>
+        </div>
+        <% for(let e of upcoming){ %> 
+       <div class="col-lg-3">
+        <div class="card mb-2">
+            <div class="card-body">
+                <img src="<%=e.eventUrl %>" class="event-img" alt="" />
+                <a href="/events/<%=e._id%>" class="text-decoration-none">
+                <p  class="event-name pt-2 text-center" ><%= e.name  %> </p>
+                </a>
+                <% if (e.eventDate==date && e.startTime.toLocaleTimeString()>= date.toLocaleTimeString() && e.endTime.toLocaleTimeString()<=date.toLocaleTimeString()) {%> 
+
+                <p class="text-center event-time"> <span class="fw-bold">In Progress</span>, Ends at<%=e.endTime.toLocaleTimeString()%> </p>
+                <% }else{ %>
+                    <p class="text-center event-time"><%= e.eventDate.getDate() %>-<%=day[e.eventDate.getMonth()] %>-<%=e.eventDate.getFullYear()%>,<%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%> </p>
+                    <% } %> 
+            </div>
+        </div>
+       </div>
+       <% } %> 
+    </div>
+
+
+    <!--  -->
+
+    <div class="row mt-3">
+        <div class="d-flex justify-content-between">
+            <p class="upcoming">Past Events</p>
+           
+        </div>
+        <% for(let e of past){ %> 
+       <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="<%= e.eventUrl %>" class="event-img" alt="">
+                <p class="event-name pt-2 text-center"><%= e.name  %> </p>
+                <p class="text-center"><%= e.eventDate.getDate() %>-<%=day[e.eventDate.getMonth()] %>-<%=e.eventDate.getFullYear()%>,<%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%> </p>
+            
+            </div>
+        </div>
+       </div>
+       <% } %> 
+    </div>
+</div>
+</div>
+

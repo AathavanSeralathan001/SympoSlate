@@ -1,0 +1,42 @@
+@font-face {
+    font-family:sans-bold;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf');
+}
+.card{
+    margin-top:30px ;
+    margin-left:70px ;
+    margin-left:70px;
+}
+.card-body .all{
+    color:#461143;
+    font-family:sans-bold;
+    font-weight: Bold;
+    font-size:22px;
+    margin: 30px;
+    letter-spacing: 1px; 
+}
+
+.card-body .no-data{
+    width: 450px;
+    height: 375px;
+} 
+
+
+.card-body a{
+    text-decoration: none;
+}
+
+body{
+    background-color: #ECECEC;
+}
+
+@media screen and (max-width:765px){
+    .card-body .no-data{
+        width: 200px;
+        height: 300px;
+    } 
+    .card{
+        margin-top:30px ;
+       margin: 40px;
+    }
+}

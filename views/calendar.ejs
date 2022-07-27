@@ -1,0 +1,63 @@
+<% layout('layout/boilerplate') %>
+<%- include('./partials/navbar')%>
+<link rel="stylesheet" href="/stylesheets/calendar.css">
+<link rel="stylesheet" href="/stylesheets/button.css">
+<div class="all-event">
+    <a class="all-event-button" href="" >All Events</a>
+    <a href="/mycalendar" class="calendar-button">My Calendar</a>
+</div>
+<div class="container-fluid">
+    <div class="box">
+        <p class="text-left mx-3 calendar-upcoming">Upcoming events</p>
+        <%for(let e of upcoming){ %> 
+        <div class="row my-3 events p-3 d-flex align-items-center mx-4">
+                <div class="col-sm-12 col-md-2 ">
+                    <img src="<%=e.eventUrl %>" class="calendar-img" alt="">
+                
+                </div>
+                
+                <div class="col-sm-12 col-md-7">
+                    <p class="calendar-event-name"><%= e.name  %> </p>
+                    <p class="calendar-event-text">
+                        <%= e.description %> 
+                    </p>
+                </div>
+                <div class=" col-sm-12 col-md-3">
+                    <p class="text-end"><%= day[e.eventDate.getMonth()] %>- <%= e.eventDate.getDay()  %> - <%= e.eventDate.getFullYear()  %>    </p>
+                    <p class="text-end"><%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%></p>
+                    <div class="text-end">
+                        <form  >
+                    <button formaction="/calender/<%=e._id%>" class=<%=register.some((id) => e._id.equals(id)) ? "button1":"button" %>> <%= register.some((id) => e._id.equals(id)) ? "Scheduled":"Add to my calendar"  %> </a>
+                    </form>
+                </div>
+                </div>
+        </div>
+<% } %> 
+
+<p class="text-left mx-3 mt-3 calendar-upcoming">Past events</p>
+        <%for(let e of past){ %> 
+        <div class="row my-3 events p-3 d-flex align-items-center mx-4">
+                <div class="col-2 ">
+                    <img src="<%=e.eventUrl %>" class="calendar-img" alt="">
+                
+                </div>
+                
+                <div class="col-7">
+                    <p class="calendar-event-name"><%= e.name  %> </p>
+                    <p class="calendar-event-text">
+                        <%= e.description %> 
+                    </p>
+                </div>
+                <div class="col-3">
+                    <p class="text-end"><%= day[e.eventDate.getMonth()] %>- <%= e.eventDate.getDay()  %> - <%= e.eventDate.getFullYear()  %>    </p>
+                    <p class="text-end"><%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%></p>
+                    <div class="text-end">
+                        <form  >
+                    <button formaction="/calender/<%=e._id%>" class=<%=register.some((id) => e._id.equals(id)) ? "button1":"button" %>> <%=register.some((id) => e._id.equals(id)) ? "Scheduled":"Add to my calendar"  %> </a>
+                    </form>
+                </div>
+                </div>
+        </div>
+<% } %> 
+    </div>
+</div>

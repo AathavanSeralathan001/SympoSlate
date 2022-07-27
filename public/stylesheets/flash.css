@@ -1,0 +1,9 @@
+.alert{
+    background-color:#461143 ;
+    color:#FFF;
+    display: flex;
+    height: 60px;
+    width:300px;
+    border-radius: 0 15px;
+    align-items: flex-end;
+}

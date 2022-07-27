@@ -1,0 +1,61 @@
+@font-face {
+    font-family: regular;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf');
+}
+.contain{
+    padding: 10px;
+    background-color: #ECECEC;
+}
+
+.layer{
+    background-color: white;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.right{
+    border-radius: 30px;
+    background-color:#ECECEC;
+    padding: 10px 20px;
+}
+
+.event-img{
+    margin-top: 30px;
+    height: 450px;
+    width:490px
+}
+/* .arrow{
+    position: absolute;
+
+    
+} */
+
+.arrow-text{
+    position:absolute;
+    right:30;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size:20px
+}
+
+.del-event{
+    font-family:regular ;
+    font-size: 20px;
+    color: #461143;
+}
+
+
+@media screen  and (max-width:765px){
+        .event-img{
+            width:200px;
+            height:300px;
+            margin-bottom: 20px;
+        }
+        .form{
+            padding: 0 !important;
+        }
+        .layer{
+            padding: 20px;
+        }
+}

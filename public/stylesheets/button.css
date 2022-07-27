@@ -1,0 +1,25 @@
+@font-face {
+    font-family: semi;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf');
+}
+
+
+.button{
+    font-family: semi;
+    letter-spacing: .1mm;
+    border-radius:0 15px;
+    background-color: #461143;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.button1{
+    font-family: semi;
+    letter-spacing: .1mm;
+    border-radius:0 15px;
+    background-color: #ADADAD;
+    color:#000000 ;
+    font-weight: 500;
+    padding: 5px 10px;
+}

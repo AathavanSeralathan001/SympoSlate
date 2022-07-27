@@ -1,0 +1,61 @@
+<% layout('layout/boilerplate') %>
+<%- include('./partials/navbar')%>
+<link rel="stylesheet" href="/stylesheets/mycalendar.css">
+<link rel="stylesheet" href="/stylesheets/button.css">
+<div class="all-event">
+    <a class="all-event-button" href="/calendar" >All Events</a>
+    <a href="" class="calendar-button">My Calendar</a>
+</div>
+<div class="container-fluid">
+    <div class="box">
+        <p class="text-left mx-3 calendar-upcoming">Upcoming events</p>
+        <%for(let e of upcoming){ %> 
+        <div class="row my-3 events p-3 d-flex align-items-center mx-4">
+                <div class="col-sm-12 col-lg-2 ">
+                    
+                    <img src="<%= e.eventUrl %>" class="calendar-img" alt="">
+                
+                </div>
+                
+                <div class="col-sm-12 col-lg-7">
+                    <p class="calendar-event-name"><%= e.name  %> </p>
+                    <p class="calendar-event-text">
+                        <%= e.description %> 
+                    </p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <p class="text-end"><%= day[e.eventDate.getMonth()] %>- <%= e.eventDate.getDay()  %> - <%= e.eventDate.getFullYear()  %>    </p>
+                    <p class="text-end"><%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%></p>
+                    <div class="text-end">
+                        <form  >
+                    <button formaction="/mycalendar/<%=e._id%>"  class="button px-3 ">Remove from  my calendar</a>
+                    </form>
+                </div>
+                </div>
+        </div>
+<% } %> 
+<p class="text-left mx-3 mt-2 calendar-upcoming">Past events</p>
+        <%for(let e of past){ %> 
+        <div class="row my-3 events p-3 d-flex align-items-center mx-4">
+                <div class="col-sm-12 col-lg-2 ">
+                    
+                    <img src="<%= e.eventUrl %>" class="calendar-img" alt="">
+                
+                </div>
+                
+                <div class="col-sm-12 col-lg-7">
+                    <p class="calendar-event-name"><%= e.name  %> </p>
+                    <p class="calendar-event-text">
+                        <%= e.description %> 
+                    </p>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <p class="text-end"><%= day[e.eventDate.getMonth()] %>- <%= e.eventDate.getDay()  %> - <%= e.eventDate.getFullYear()  %>    </p>
+                    <p class="text-end"><%=e.startTime.toLocaleTimeString()%>:<%=e.endTime.toLocaleTimeString()%></p>
+                    
+                </div>
+                </div>
+        </div>
+<% } %> 
+    </div>
+</div>

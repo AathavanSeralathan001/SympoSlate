@@ -1,0 +1,10 @@
+@font-face {
+    font-family: input;
+    src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf');
+}
+
+.input{
+    border-radius:0 15px;
+    font-family: input;
+    padding: 10px 20px;
+}
